@@ -19,6 +19,18 @@ public class BasketPage extends DriverManager {
     @FindBy(xpath="//*[@id=\"topcartlink\"]/a/span[1]")
     public WebElement clickOnBasket;
 
+    //checkout
+    @FindBy(css="#updatecart")
+    public WebElement updateShopping;
+
+    @FindBy(css="#termsofservice")
+    public WebElement termsAndCondition;
+
+    @FindBy(xpath = "//button[@id='checkout']")
+    public WebElement checkout;
+    @FindBy(css="body > div:nth-child(7) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(1)")
+    public WebElement welcomText;
+
 
 
     public void searchProductOnsearchbox(){
@@ -37,6 +49,20 @@ public class BasketPage extends DriverManager {
         clickOnBasket.click();
         }
 
+//checkout
 
+    public void clickOnUpdateShopping(){
+        updateShopping.click();
+    }
+    public void clickOnTermsAndConditions(){
+        termsAndCondition.click();
+    }
+    public void clickOnCheckout(){
+        checkout.click();
+    }
+    public boolean welcomePleaseSignInText(){
+        welcomText.isDisplayed();
+        return true;
+    }
     }
 
