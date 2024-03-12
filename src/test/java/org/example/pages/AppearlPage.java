@@ -16,7 +16,7 @@ public class AppearlPage extends DriverManager {
 
     @FindBy(id = "add-to-cart-button-30")
     public WebElement addToCart ;
-    @FindBy(className = "bar-notification success")
+    @FindBy(xpath= "//*[@id=\"bar-notification\"]/div/p/a")
     public WebElement clickOnVerification;
 
     public void  clickOnApparelButtonOnHomePage(){
@@ -29,6 +29,8 @@ public class AppearlPage extends DriverManager {
 
         levisJeans.click();
     }
+
+
     public void clckOnAddToCartButton(){
         addToCart.click();
     }

@@ -17,8 +17,8 @@ import java.io.IOException;
 
 public class DriverManager {
     public static WebDriver driver;
-    String browser="edge" ;
-    String baseUrl="https://www.next.co.uk/";
+    String browser="chrome" ;
+    String baseUrl="https://demo.nopcommerce.com/";
 
     public DriverManager(){
         PageFactory.initElements(driver,this);
