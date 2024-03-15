@@ -31,11 +31,14 @@ public class AppearlPage extends DriverManager {
     }
 
 
-    public void clckOnAddToCartButton(){
+    public boolean clckOnAddToCartButton(){
+
         addToCart.click();
+        return true;
     }
 
     public void clickOnVerificationButton(){
+
         clickOnVerification.click();
     }
 }

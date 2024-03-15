@@ -14,3 +14,18 @@ Feature:Registration
     When I click on "Registration submitt" on registration page
     Then I should see "your registration completed" text on registration page
     And The url should contain with "/registrationresult"
+
+  @RegistrationWithDataTable
+  Scenario: :Valid registration using datatable
+    Given I am on homepage
+    When I click on "Registration"
+    And I select "Female"
+    And I entre following data for registration
+      | firstname | lastname |emailId | password |   confirmpassword |
+      | sheetal   | parmar   |sheetalparmar@ymail.com | abcd2008 | abcd2008 |
+    When I click on "Registration submitt" on registration page
+    Then I should see "your registration completed" text on registration page
+    And The url should contain with "/registrationresult"
+
+
+

@@ -4,6 +4,8 @@ import org.example.driver.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static org.bouncycastle.cms.RecipientId.password;
+
 public class RegistrationPage extends DriverManager {
     DriverManager driverManager=new DriverManager();
     @FindBy(className="ico-register")
@@ -33,6 +35,9 @@ public class RegistrationPage extends DriverManager {
     @FindBy(className = "result")
     public WebElement registrationCompleted;
 
+    @FindBy(className = "result")
+    public WebElement result;
+
     public void clickHomePageRegistration(){
         homepageRegistration.click();}
 
@@ -51,9 +56,7 @@ public class RegistrationPage extends DriverManager {
     public void emailIdInputField(){
         emailId.clear();
         emailId.sendKeys("sheetalparmar@ymail.com");
-        int myRandomNumber= driverManager.generateRandomNumber();
-        //int email = 0;
-        //emailId.sendKeys(email + myRandomNumber);
+
     }
 
     public void passwordInputField(){
@@ -70,7 +73,9 @@ public class RegistrationPage extends DriverManager {
         registrationCompleted.getText();
         return true;
     }
-    public void entreRegistrationDetails(String firstname,String lastname,String email,String password,String confirmPassword) throws InterruptedException {
+    public void registrationReuslt(){result.isDisplayed();
+    }
+    public void entreRegistrationDetails(String firstname,String lastname,String email,String password,String confirmpassword) throws InterruptedException {
         firstName.clear();
         firstName.sendKeys(firstname);
         lastName.clear();
@@ -81,9 +86,8 @@ public class RegistrationPage extends DriverManager {
         firstPassword.clear();
         firstPassword.sendKeys(password);
         confirmPasswordInputBox.clear();
-        confirmPasswordInputBox.sendKeys(confirmPassword);
+        confirmPasswordInputBox.sendKeys(confirmpassword);
         driverManager.sleepBrowser(4000);
 
-    }
 
-}
+    }}
