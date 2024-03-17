@@ -68,8 +68,42 @@ public class BasketSteps extends DriverManager {
         boolean IsconfirmSignInText = basketPage.welcomePleaseSignInText();
         assertThat(IsconfirmSignInText, Matchers.is(true));
 
+    }
+    //new sceinario
+    @Given("^User is on shopping cart page$")
+    public void user_is_on_shopping_cart_page() throws Throwable {
+        basketPage.welcomePleaseSignInText();
 
     }
+
+    @Given("^I signin as \"([^\"]*)\"$")
+    public void i_signin_as(String arg1) throws Throwable {
+        basketPage.welcomePleaseSignInText();
+        basketPage.entreEmailId();
+
+    }
+
+    @Given("^I entre my password \"([^\"]*)\"$")
+    public void i_entre_my_password(String arg1) throws Throwable {
+        basketPage.entrePassword();
+
+    }
+
+    @When("^I click on \"([^\"]*)\"button$")
+    public void i_click_on_button(String arg1) throws Throwable {
+        basketPage.clickOnLogInButton();
+
+    }
+
+    @Then("^I can see\"([^\"]*)\" text$")
+    public void i_can_see_text(String arg1) throws Throwable {
+       boolean IsshoppingCartTextDisplayed= basketPage.shoppingCartText();
+       assertThat(IsshoppingCartTextDisplayed,Matchers.is(true));
+
+
+
+    }
+
 
 
 }

@@ -99,6 +99,9 @@ public class DriverManager {
 
     }
 
+    public int generateRandomNumber() {
+        return 0;
+    }
 }
 
 

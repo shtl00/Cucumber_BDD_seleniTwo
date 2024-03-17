@@ -31,6 +31,19 @@ public class BasketPage extends DriverManager {
     @FindBy(css="body > div:nth-child(7) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(1)")
     public WebElement welcomText;
 
+    // new scenario
+ @FindBy(xpath ="//input[@id='Email']")
+ public WebElement emailId;
+
+ @FindBy(xpath="//input[@id='Password']")
+ public WebElement password;
+
+ @FindBy(xpath  = "//button[normalize-space()='Log in']")
+ public WebElement login;
+
+ @FindBy(xpath = "//h1[normalize-space()='Shopping cart']")
+ public WebElement shoppingCart;
+
 
 
     public void searchProductOnsearchbox(){
@@ -62,6 +75,22 @@ public class BasketPage extends DriverManager {
     }
     public boolean welcomePleaseSignInText(){
         welcomText.isDisplayed();
+        return true;
+    }
+
+    public void entreEmailId(){
+        emailId.clear();
+        emailId.sendKeys("parmarsheetal@ymail.com");
+    }
+    public void entrePassword(){
+        password.clear();
+        password.sendKeys("abcd123");
+    }
+    public void clickOnLogInButton(){
+        login.click();
+    }
+    public boolean shoppingCartText(){
+        shoppingCart.isDisplayed();
         return true;
     }
     }

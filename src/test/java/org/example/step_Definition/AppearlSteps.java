@@ -7,7 +7,6 @@ import org.example.driver.DriverManager;
 import org.example.pages.AppearlPage;
 import org.hamcrest.Matchers;
 
-import static net.bytebuddy.matcher.ElementMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class AppearlSteps extends DriverManager {
@@ -38,6 +37,10 @@ driver.getCurrentUrl();
     @Then("^user able to add product \"([^\"]*)\"$")
     public void user_able_to_add_product(String arg1) throws Throwable {
         ap.clckOnAddToCartButton();
+        boolean  IsjeansAdded= ap.clckOnAddToCartButton();
+        assertThat(IsjeansAdded, Matchers.is(true));
+
+
 
 
     }
